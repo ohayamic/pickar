@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-//import { Button } from 'reactstrap';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Display from './Display'
 import styled from 'styled-components';
 import Main from './Main'
 
@@ -15,9 +16,13 @@ class App extends Component {
     `;
    
     return (
-      <Div>
-       <Main/>
-      </Div>
+      <BrowserRouter>
+          <Div>
+            <Route exact path='/' component={Main} />
+            <Route path='/display' component={Display} />
+          </Div>
+      </BrowserRouter>
+      
     );
   }
 }

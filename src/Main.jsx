@@ -46,7 +46,7 @@ export default class Main extends Component {
 
 
         return (
-        <div>
+        <React.Fragment>
             <Container >
                 <InnerContainer>
                     <H1Div>pickar</H1Div>
@@ -55,7 +55,7 @@ export default class Main extends Component {
                 <Calculator/>
                 
             </Container>
-        </div>
+        </React.Fragment>
             
         )
     }

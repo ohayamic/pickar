@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components';
 export default class Calculator extends Component {
     render() {
@@ -96,8 +97,14 @@ export default class Calculator extends Component {
         text-align: right;
         font-size:15px;
       `;
+
+      const P = styled.p`
+        color: white;
+       `;
+
+      //const API = "http://www.api.currencylayer.com/live?access_key=3c4c32d5507977e1facd40bf20fa702f"
         return (
-            <div>
+            <React.Fragment>
                 <Calculate>
                     <Wrapper>
                         <AmountWrapper>
@@ -106,20 +113,20 @@ export default class Calculator extends Component {
                         </AmountWrapper>
                         <FromWrapper>
                         <label >From</label><br/>
-                        <Select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                        <Select name="currency" id="currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="CAN">CAN</option>
                         </Select>
                         </FromWrapper>
                         <ToWrapper>
                         <label >To</label><br/>
-                        <Select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                        <Select name="currency" id="currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="CAN">CAN</option>
                         </Select>
                         </ToWrapper>
                         <ButtonWrapper>
@@ -133,11 +140,9 @@ export default class Calculator extends Component {
                 </Calculate>
                 <DisplayContent>
                     <ViewHistory>
-                        <a href="#">
-                            <p>
-                                view convertion history>
-                            </p>
-                        </a>
+                        <Link to="/display">
+                                <p>view convertion history</p>
+                        </Link>
                         
                     </ViewHistory>
                     <div>
@@ -145,7 +150,7 @@ export default class Calculator extends Component {
                         <h1>Display</h1>
                     </div>
                 </DisplayContent>
-            </div>
+            </React.Fragment>
             
         )
     }
